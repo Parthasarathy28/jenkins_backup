@@ -1,0 +1,90 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1207.ve6191ff089f8">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2114.v2654ca_721309"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2114.v2654ca_721309">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2759.v87459c4eea_ca_">
+    <script>pipeline
+{
+    agent {node (&apos;built-in&apos;)}
+    tools
+    {
+       maven &quot;Maven&quot;
+    }
+ stages 
+ {
+      stage(&apos;checkout&apos;) 
+      {
+           steps 
+           {
+                git branch: &apos;master&apos;, url: &apos;https://github.com/Parthasarathy28/CI-CD-using-Docker.git&apos;
+           }
+       }
+      stage(&apos;Execute Maven&apos;) 
+      {
+           steps 
+           {
+                sh &apos;mvn package&apos;             
+           }
+      }
+      stage(&apos;Docker Build and Tag&apos;) {
+           steps {
+              
+                sh &apos;docker build -t webpage:latest .&apos; 
+                sh &apos;docker tag webpage partha28/webpage:$BUILD_NUMBER&apos;
+                //sh &apos;docker tag samplewebapp nikhilnidhi/samplewebapp:$BUILD_NUMBER&apos;
+               
+          }
+        }
+     
+  stage(&apos;Publish image to Docker Hub&apos;) {
+          
+            steps {
+        withDockerRegistry([ credentialsId: &quot;docker-hub&quot;, url: &quot;&quot; ]) {
+          sh  &apos;docker push partha28/webpage:$BUILD_NUMBER&apos;
+        //  sh  &apos;docker push nikhilnidhi/samplewebapp:$BUILD_NUMBER&apos; 
+        }
+                  
+          }
+        }
+     
+      stage(&apos;Run Docker container on Jenkins Agent&apos;) {
+             
+            steps 
+   {
+                sh &quot;docker run -d -p 8006:8080 partha28/webpage:$BUILD_NUMBER&quot;
+ 
+            }
+        }
+        
+        stage(&apos;Email&apos;)
+        {
+            steps 
+            {
+                emailext attachLog: true, body: &apos;pipeline&apos;, subject: &apos;pipeline&apos;, to: &apos;parthasarathi.parandhaman@gmail.com&apos;
+            }
+        }
+    
+        stage(&apos;Run Docker container on remote hosts&apos;) {
+             
+            steps {
+                sh &quot;docker -H ssh://jenkins@13.233.136.231 run -d -p 8006:8080 partha28/webpage&quot;
+            }
+        }
+    }
+ }
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

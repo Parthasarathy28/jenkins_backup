@@ -1,0 +1,27 @@
+Started by user [8mha:////4EPbb6Snc5dfCiCOB6OTI07/KyWKWGiio9rpaIpyjLcaAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xJTczDwACG0V4sAAAAA=[0mParthasarathi
+Running as SYSTEM
+Building on the built-in node in workspace /var/lib/jenkins/workspace/testing
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/testing/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/keshavr21/test_cases.git # timeout=10
+Fetching upstream changes from https://github.com/keshavr21/test_cases.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.37.1'
+ > git fetch --tags --force --progress -- https://github.com/keshavr21/test_cases.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 118470a509de86f45c680e3182306bc269cfe029 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 118470a509de86f45c680e3182306bc269cfe029 # timeout=10
+Commit message: "adding new files"
+ > git rev-list --no-walk 118470a509de86f45c680e3182306bc269cfe029 # timeout=10
+No emails were triggered.
+[testing] $ /bin/sh -xe /tmp/jenkins252920839088499743.sh
++ java -jar testing.jar /var/lib/jenkins/workspace/testing/webapp/target/webapp.war
+about:blank
+Expected Message : Hello, World!
+Actual Message   : 
+Testing has Failed
+[DeployPublisher][INFO] Attempting to deploy 1 war file(s)
+[DeployPublisher][INFO] Deploying /var/lib/jenkins/workspace/testing/webapp/target/webapp.war to container Tomcat 9.x Remote with context testing

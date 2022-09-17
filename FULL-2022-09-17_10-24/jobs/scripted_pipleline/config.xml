@@ -1,0 +1,43 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1207.ve6191ff089f8">
+  <actions/>
+  <description>this is scripted pipeline</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2759.v87459c4eea_ca_">
+    <script>node(&apos;built-in&apos;) 
+ {
+    stage(&apos;continues download&apos;) 
+    {
+        git &apos;https://github.com/keshavr21/maven_test.git&apos;
+    }
+    stage(&apos;continues build&apos;) 
+    {
+       sh &apos;&quot;/opt/maven/bin/mvn&quot; clean package&apos;
+    }
+    stage(&apos;continues deployment&apos;) 
+    {
+               deploy adapters: [tomcat9(credentialsId: &apos;15d8b3b2-1981-4a3a-ae9b-c864f9fa8d16&apos;, path: &apos;&apos;, url: &apos;http://172.31.39.150:8080/&apos;)], contextPath: &apos;dec&apos;, war: &apos;**/*.war&apos;    
+    }
+    stage(&apos;continues testing&apos;) 
+    {
+        git &apos;https://github.com/keshavr21/test_cases.git&apos;
+        sh &apos;java -jar testing.jar webapp/target/webapp.war&apos;    
+    }
+    stage(&apos;continuous delivery&apos;)
+    {
+       deploy adapters: [tomcat9(credentialsId: &apos;15d8b3b2-1981-4a3a-ae9b-c864f9fa8d16&apos;, path: &apos;&apos;, url: &apos;http://172.31.39.150:8080/&apos;)], contextPath: &apos;production&apos;, war: &apos;**/*.war&apos;
+    }
+   stage(&apos;Email&apos;)
+        {
+           emailext attachLog: true, body: &apos;pipeline&apos;, subject: &apos;script pipeline&apos;, to: &apos;unmilanar@gmail.com&apos;
+        }
+    
+ }
+ 
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

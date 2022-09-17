@@ -1,0 +1,37 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1207.ve6191ff089f8">
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2759.v87459c4eea_ca_">
+    <script>Username and Password Credentials
+pipeline {
+    agent any
+    stages {
+        stage(&apos;Example Username/Password&apos;) {
+            environment {
+                SERVICE_CREDS = credentials(&apos;secret-text&apos;)
+            }
+            steps {
+                sh &apos;echo &quot;Service user is $SERVICE_CREDS_USR&quot;&apos;
+                sh &apos;echo &quot;Service password is $SERVICE_CREDS_PSW&quot;&apos;
+                sh &apos;curl -u $SERVICE_CREDS https://myservice.example.com&apos;
+            }
+        }
+        stage(&apos;Example SSH Username with private key&apos;) {
+            environment {
+                SSH_CREDS = credentials(&apos;secret-text&apos;)
+            }
+            steps {
+                sh &apos;echo &quot;SSH private key is located at $SSH_CREDS&quot;&apos;
+                sh &apos;echo &quot;SSH user is $SSH_CREDS_USR&quot;&apos;
+                sh &apos;echo &quot;SSH passphrase is $SSH_CREDS_PSW&quot;&apos;
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

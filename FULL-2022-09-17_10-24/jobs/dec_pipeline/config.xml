@@ -1,0 +1,63 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1207.ve6191ff089f8">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2114.v2654ca_721309"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2114.v2654ca_721309">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2759.v87459c4eea_ca_">
+    <script>pipeline
+{
+    agent {node(&apos;built-in&apos;)}
+    stages
+    {
+        stage(&apos;continuous delivery&apos;)
+        {
+            steps
+            {
+                git &apos;https://github.com/keshavr21/maven_test.git&apos;
+            }
+        }
+        stage(&apos;continuous build&apos;)
+        {
+            steps
+            {
+                sh &apos;/opt/maven/bin/mvn clean package&apos;
+            }
+        }
+        stage(&apos;continuous deploy&apos;)
+        {
+            steps
+            {
+               deploy adapters: [tomcat9(credentialsId: &apos;15d8b3b2-1981-4a3a-ae9b-c864f9fa8d16&apos;, path: &apos;&apos;, url: &apos;http://172.31.39.150:8080/&apos;)], contextPath: &apos;dec&apos;, war: &apos;**/*.war&apos;    
+            }
+        }
+        stage(&apos;continuous testing&apos;)
+        {
+            steps
+            {
+                git &apos;https://github.com/keshavr21/test_cases.git&apos;
+                sh &apos;java -jar testing.jar $WORKSPACE/webapp/target/webapp.war&apos;
+            }
+        }
+        stage(&apos;Email&apos;)
+        {
+            steps
+            {
+            emailext attachLog: true, body: &apos;pipeline&apos;, subject: &apos;dec pipeline&apos;, to: &apos;parthasarathi.parandhaman@gmail.com&apos;        
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

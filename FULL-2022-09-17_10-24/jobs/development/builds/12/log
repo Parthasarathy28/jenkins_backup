@@ -1,0 +1,22 @@
+Started by user [8mha:////4EPbb6Snc5dfCiCOB6OTI07/KyWKWGiio9rpaIpyjLcaAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xJTczDwACG0V4sAAAAA=[0mParthasarathi
+Running as SYSTEM
+Building on the built-in node in workspace /var/lib/jenkins/workspace/development
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/keshavr21/maven_test.git
+ > git init /var/lib/jenkins/workspace/development # timeout=10
+Fetching upstream changes from https://github.com/keshavr21/maven_test.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.37.1'
+ > git fetch --tags --force --progress -- https://github.com/keshavr21/maven_test.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/keshavr21/maven_test.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 5ce10f3a7d45fcd522571bb8653ac3a4a191cee2 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 5ce10f3a7d45fcd522571bb8653ac3a4a191cee2 # timeout=10
+Commit message: "Update index.jsp"
+ > git rev-list --no-walk 5ce10f3a7d45fcd522571bb8653ac3a4a191cee2 # timeout=10
+[development] $ /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/MAVEN_HOME/bin/mvn clean package

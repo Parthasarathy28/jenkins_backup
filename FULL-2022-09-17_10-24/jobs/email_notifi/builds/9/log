@@ -1,0 +1,175 @@
+Started by user [8mha:////4EPbb6Snc5dfCiCOB6OTI07/KyWKWGiio9rpaIpyjLcaAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xJTczDwACG0V4sAAAAA=[0mParthasarathi
+Running as SYSTEM
+Building on the built-in node in workspace /var/lib/jenkins/workspace/email_notifi
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/email_notifi/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/apache/maven.git # timeout=10
+Fetching upstream changes from https://github.com/apache/maven.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.37.1'
+ > git fetch --tags --force --progress -- https://github.com/apache/maven.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision ce4579108d653be2ab7eab43be7d5951151dae5b (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ce4579108d653be2ab7eab43be7d5951151dae5b # timeout=10
+Commit message: "[MNG-7529] Maven resolver makes bad repository choices (#786)"
+ > git rev-list --no-walk ce4579108d653be2ab7eab43be7d5951151dae5b # timeout=10
+Checking for pre-build
+Executing pre-build step
+Checking if email needs to be generated
+No emails were triggered.
+[email_notifi] $ /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/MAVEN_HOME/bin/mvn clean package
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Maven Dependencies BOM                                             [pom]
+[INFO] Apache Maven                                                       [pom]
+[INFO] Maven Model                                                        [jar]
+[INFO] Maven Artifact                                                     [jar]
+[INFO] Maven Plugin API                                                   [jar]
+[INFO] Maven Builder Support                                              [jar]
+[INFO] Maven Model XML Transform                                          [jar]
+[INFO] Maven Model Builder                                                [jar]
+[INFO] Maven Settings                                                     [jar]
+[INFO] Maven Settings Builder                                             [jar]
+[INFO] Maven Toolchain Model                                              [jar]
+[INFO] Maven Toolchain Builder                                            [jar]
+[INFO] Maven Repository Metadata Model                                    [jar]
+[INFO] Maven Artifact Resolver Provider                                   [jar]
+[INFO] Maven Core                                                         [jar]
+[INFO] Maven SLF4J Wrapper                                                [jar]
+[INFO] Maven SLF4J Simple Provider                                        [jar]
+[INFO] Maven Embedder                                                     [jar]
+[INFO] Maven Compat                                                       [jar]
+[INFO] Apache Maven Distribution                                          [pom]
+[INFO] 
+[INFO] ---------------------< org.apache.maven:maven-bom >---------------------
+[INFO] Building Maven Dependencies BOM 4.0.0-alpha-1-SNAPSHOT            [1/20]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ maven-bom ---
+[INFO] Deleting /var/lib/jenkins/workspace/email_notifi/maven-bom/target
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ maven-bom ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ maven-bom ---
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ maven-bom ---
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ maven-bom ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes (use -debug for more details).
+[INFO] 5 explicit excludes (use -debug for more details).
+[INFO] 3 resources included (use -debug for more details)
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 3 licenses.
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ maven-bom ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-site-plugin:3.11.0:attach-descriptor (attach-descriptor) @ maven-bom ---
+[INFO] Attaching 'src/site/site.xml' site descriptor with classifier 'site'.
+[INFO] 
+[INFO] -----------------------< org.apache.maven:maven >-----------------------
+[INFO] Building Apache Maven 4.0.0-alpha-1-SNAPSHOT                      [2/20]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ maven ---
+[INFO] Deleting /var/lib/jenkins/workspace/email_notifi/target
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle-check) @ maven ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-bytecode-version) @ maven ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ maven ---
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ maven ---
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.1.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven ---
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- apache-rat-plugin:0.14:check (rat-check) @ maven ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Parsing exclusions from /var/lib/jenkins/workspace/email_notifi/.gitignore
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 90 implicit excludes.
+[INFO] 17 explicit excludes.
+[INFO] 16 resources included
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 12 licenses.
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ maven ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- animal-sniffer-maven-plugin:1.21:check (check-java-compat) @ maven ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-site-plugin:3.12.0:attach-descriptor (attach-descriptor) @ maven ---
+[INFO] Attaching 'src/site/site.xml' site descriptor with classifier 'site'.
+[INFO] 
+[INFO] --------------------< org.apache.maven:maven-model >--------------------
+[INFO] Building Maven Model 4.0.0-alpha-1-SNAPSHOT                       [3/20]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ maven-model ---
+[INFO] Deleting /var/lib/jenkins/workspace/email_notifi/maven-model/target
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-checkstyle-plugin:3.1.2:check (checkstyle-check) @ maven-model ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-bytecode-version) @ maven-model ---
+[INFO] Adding ignore: module-info
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ maven-model ---
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ maven-model ---
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-enforcer-plugin:3.1.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-model ---
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- apache-rat-plugin:0.14:check (rat-check) @ maven-model ---
+[INFO] Enabled default license matchers.
+[INFO] Will parse SCM ignores for exclusions...
+[INFO] Finished adding exclusions from SCM ignore files.
+[INFO] 62 implicit excludes.
+[INFO] 17 explicit excludes.
+[INFO] 46 resources included
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 46 licenses.
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- modello-maven-plugin:2.0.0:java (modello) @ maven-model ---
+[INFO] outputDirectory: /var/lib/jenkins/workspace/email_notifi/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- modello-maven-plugin:2.0.0:xpp3-reader (modello) @ maven-model ---
+[INFO] outputDirectory: /var/lib/jenkins/workspace/email_notifi/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- modello-maven-plugin:2.0.0:xpp3-extended-reader (modello) @ maven-model ---
+[INFO] outputDirectory: /var/lib/jenkins/workspace/email_notifi/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- modello-maven-plugin:2.0.0:xpp3-writer (modello) @ maven-model ---
+[INFO] outputDirectory: /var/lib/jenkins/workspace/email_notifi/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- modello-maven-plugin:2.0.0:xpp3-extended-writer (modello) @ maven-model ---
+[INFO] outputDirectory: /var/lib/jenkins/workspace/email_notifi/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.0
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ maven-model ---
+[INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[8mha:////4E692mvpDjC2igVdCJus/pefhJY/0DLMPX7/2avvHINwAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75Zek2mxOX+vh68DGxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAAAn9LoiYAAAAA==[0m[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ maven-model ---
